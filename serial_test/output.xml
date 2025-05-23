@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.2 on linux)" generated="2025-05-11T21:01:23.304365" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Serial" source="/home/jere/Oppari/test_test/tests/test_serial.robot">
+<test id="s1-t1" name="Boot Message" line="9">
+<kw name="Open Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:25.410841" level="INFO">Serial connection opened on /dev/ttyUSB0 with baud 115200</msg>
+<arg>${PORT}</arg>
+<arg>baudrate=${BAUDRATE}</arg>
+<status status="PASS" start="2025-05-11T21:01:23.408295" elapsed="2.002952"/>
+</kw>
+<kw name="Reset Esp32" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:27.513919" level="INFO">Resetting ESP32 via DTR...</msg>
+<status status="PASS" start="2025-05-11T21:01:25.412129" elapsed="2.102199"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-11T21:01:30.516547" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-11T21:01:27.515344" elapsed="3.001705"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:33.533337" level="INFO">Reading from serial...
+Response received: ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x1270
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xa04
+load:0x4004e000,len:0x3540
+entry 0x4004a15c
+ESP32 READY</msg>
+<msg time="2025-05-11T21:01:33.534042" level="INFO">${output} = ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x1270
+load:0x4004a000,len:0x4
+load:0x4004a0...</msg>
+<var>${output}</var>
+<status status="PASS" start="2025-05-11T21:01:30.518115" elapsed="3.016096"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-11T21:01:33.535997" level="INFO">Actual Boot Message: ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x1270
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xa04
+load:0x4004e000,len:0x3540
+entry 0x4004a15c
+ESP32 READY</msg>
+<arg>Actual Boot Message: ${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-11T21:01:33.535123" elapsed="0.001143"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>ESP-ROM:esp32s2-rc4-20191025</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-11T21:01:33.536951" elapsed="0.000906"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-11T21:01:38.539617" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-11T21:01:33.538514" elapsed="5.001532"/>
+</kw>
+<status status="PASS" start="2025-05-11T21:01:23.405893" elapsed="15.135051"/>
+</test>
+<test id="s1-t2" name="Send Manual Test Message" line="18">
+<kw name="Write To Serial" owner="SerialKeywords">
+<arg>WTF\n</arg>
+<status status="PASS" start="2025-05-11T21:01:38.544091" elapsed="0.000804"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-11T21:01:39.546720" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-11T21:01:38.545633" elapsed="1.001508"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:39.549049" level="INFO">Serial not open.</msg>
+<msg time="2025-05-11T21:01:39.549453" level="INFO">${debug} = </msg>
+<var>${debug}</var>
+<arg>timeout=3</arg>
+<status status="PASS" start="2025-05-11T21:01:39.548022" elapsed="0.001550"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-11T21:01:39.551052" level="INFO">DEBUG RESPONSE: </msg>
+<arg>DEBUG RESPONSE: ${debug}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-11T21:01:39.550337" elapsed="0.000940"/>
+</kw>
+<status status="PASS" start="2025-05-11T21:01:38.542494" elapsed="1.009470"/>
+</test>
+<test id="s1-t3" name="Responds To Hello" line="24">
+<kw name="Open Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:41.558693" level="INFO">Serial connection opened on /dev/ttyUSB0 with baud 115200</msg>
+<arg>${PORT}</arg>
+<arg>baudrate=${BAUDRATE}</arg>
+<status status="PASS" start="2025-05-11T21:01:39.554405" elapsed="2.004687"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-11T21:01:46.561341" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-11T21:01:41.560008" elapsed="5.002027"/>
+</kw>
+<kw name="Write To Serial" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:46.605069" level="INFO">Writing raw bytes: 'hi\r\n'</msg>
+<arg>hi\r\n</arg>
+<status status="PASS" start="2025-05-11T21:01:46.562851" elapsed="0.042572"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-11T21:01:48.607462" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-11T21:01:46.606317" elapsed="2.001548"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:53.628435" level="INFO">Reading from serial...
+Response received: Received: hi
+Hello from ESP32</msg>
+<msg time="2025-05-11T21:01:53.629006" level="INFO">${response} = Received: hi
+Hello from ESP32</msg>
+<var>${response}</var>
+<arg>timeout=5</arg>
+<status status="PASS" start="2025-05-11T21:01:48.608664" elapsed="5.020481"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-11T21:01:53.630852" level="INFO">Actual Response: Received: hi
+Hello from ESP32</msg>
+<arg>Actual Response: ${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-11T21:01:53.630037" elapsed="0.001058"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response}</arg>
+<arg>Hello from ESP32</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-11T21:01:53.631769" elapsed="0.000713"/>
+</kw>
+<kw name="Close Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-11T21:01:53.634155" level="INFO">Closing serial connection.</msg>
+<status status="PASS" start="2025-05-11T21:01:53.633132" elapsed="0.001259"/>
+</kw>
+<status status="PASS" start="2025-05-11T21:01:39.552979" elapsed="14.082010"/>
+</test>
+<status status="PASS" start="2025-05-11T21:01:23.309551" elapsed="30.327069"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Serial" id="s1" pass="3" fail="0" skip="0">Test Serial</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
