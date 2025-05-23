@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.2 on linux)" generated="2025-05-22T18:01:20.288731" rpa="false" schemaversion="5">
+<suite id="s1" name="Combined Test" source="/home/jere/Opinnautetyo/Robot_tests/combined_test.robot">
+<test id="s1-t1" name="Boot Message" line="10">
+<kw name="Open Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:22.510281" level="INFO">Serial connection opened on /dev/ttyUSB0 with baud 115200</msg>
+<arg>${PORT}</arg>
+<arg>baudrate=${BAUDRATE}</arg>
+<status status="PASS" start="2025-05-22T18:01:20.503030" elapsed="2.007574"/>
+</kw>
+<kw name="Reset Esp32" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:24.613496" level="INFO">Resetting ESP32 via DTR...</msg>
+<status status="PASS" start="2025-05-22T18:01:22.511188" elapsed="2.102562"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:27.615126" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:24.614320" elapsed="3.001263"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:30.677484" level="INFO">Reading from serial...
+Response received: Moist ADC = 0 | Tank level ADC = 1816 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1800 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1802 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0xa (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x1270
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xa04
+load:0x4004e000,len:0x3540
+entry 0x4004a15c
+AUTO PUMP ON
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1800 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1808 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1806 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1830 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1786 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1824 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1778 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1758 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1794 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL</msg>
+<msg time="2025-05-22T18:01:30.678241" level="INFO">${output} = Moist ADC = 0 | Tank level ADC = 1816 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1800 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1802 | Tank is FULL
+Moist ADC = 0 | Tank level...</msg>
+<var>${output}</var>
+<status status="PASS" start="2025-05-22T18:01:27.616546" elapsed="3.061875"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T18:01:30.680621" level="INFO">Actual Boot Message: Moist ADC = 0 | Tank level ADC = 1816 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1800 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1802 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0xa (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x1270
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xa04
+load:0x4004e000,len:0x3540
+entry 0x4004a15c
+AUTO PUMP ON
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1800 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1808 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1806 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1830 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1786 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1824 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1778 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1758 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1794 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL</msg>
+<arg>Actual Boot Message: ${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T18:01:30.679513" elapsed="0.001507"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>ESP-ROM:esp32s2-rc4-20191025</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-22T18:01:30.682170" elapsed="0.001175"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:35.686973" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:30.684421" elapsed="5.002965"/>
+</kw>
+<status status="PASS" start="2025-05-22T18:01:20.500607" elapsed="15.187471"/>
+</test>
+<test id="s1-t2" name="Send Manual Test Message" line="19">
+<kw name="Write To Serial" owner="SerialKeywords">
+<arg>WTF\n</arg>
+<status status="PASS" start="2025-05-22T18:01:35.692228" elapsed="0.000623"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:36.694358" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:35.693633" elapsed="1.000992"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:36.695684" level="INFO">Serial not open.</msg>
+<msg time="2025-05-22T18:01:36.695912" level="INFO">${debug} = </msg>
+<var>${debug}</var>
+<arg>timeout=3</arg>
+<status status="PASS" start="2025-05-22T18:01:36.695120" elapsed="0.000854"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T18:01:36.696843" level="INFO">DEBUG RESPONSE: </msg>
+<arg>DEBUG RESPONSE: ${debug}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T18:01:36.696410" elapsed="0.000570"/>
+</kw>
+<status status="PASS" start="2025-05-22T18:01:35.690981" elapsed="1.006480"/>
+</test>
+<test id="s1-t3" name="Responds To Manual Override On" line="25">
+<kw name="Open Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:38.707719" level="INFO">Serial connection opened on /dev/ttyUSB0 with baud 115200</msg>
+<arg>${PORT}</arg>
+<arg>baudrate=${BAUDRATE}</arg>
+<status status="PASS" start="2025-05-22T18:01:36.699052" elapsed="2.008902"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:43.709306" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:38.708480" elapsed="5.001268"/>
+</kw>
+<kw name="Write To Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:43.752788" level="INFO">Writing raw bytes: 'on\r\n'</msg>
+<arg>on\r\n</arg>
+<status status="PASS" start="2025-05-22T18:01:43.710641" elapsed="0.042604"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:45.756202" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:43.754186" elapsed="2.002687"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:50.798829" level="INFO">Reading from serial...
+Response received: AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Manual override: PUMP FORCED ON
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1754 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1744 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1758 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1794 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1782 | Tank is FULL</msg>
+<msg time="2025-05-22T18:01:50.799404" level="INFO">${response} = AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Manual override: PUMP FORCED ON
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1798 | Tank i...</msg>
+<var>${response}</var>
+<arg>timeout=5</arg>
+<status status="PASS" start="2025-05-22T18:01:45.758369" elapsed="5.041115"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T18:01:50.800461" level="INFO">Actual Response: AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Manual override: PUMP FORCED ON
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1754 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1744 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1788 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1758 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1794 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1776 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1782 | Tank is FULL</msg>
+<arg>Actual Response: ${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T18:01:50.799977" elapsed="0.000631"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response}</arg>
+<arg>Manual override: PUMP FORCED ON</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-22T18:01:50.800988" elapsed="0.000620"/>
+</kw>
+<kw name="Close Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:50.804826" level="INFO">Closing serial connection.</msg>
+<status status="PASS" start="2025-05-22T18:01:50.802823" elapsed="0.002222"/>
+</kw>
+<status status="PASS" start="2025-05-22T18:01:36.698109" elapsed="14.107420"/>
+</test>
+<test id="s1-t4" name="Responds To Manual Override Off" line="35">
+<kw name="Open Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:52.813893" level="INFO">Serial connection opened on /dev/ttyUSB0 with baud 115200</msg>
+<arg>${PORT}</arg>
+<arg>baudrate=${BAUDRATE}</arg>
+<status status="PASS" start="2025-05-22T18:01:50.806934" elapsed="2.007196"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:57.815331" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:52.814636" elapsed="5.001145"/>
+</kw>
+<kw name="Write To Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:01:57.869659" level="INFO">Writing raw bytes: 'off\r\n'</msg>
+<arg>off\r\n</arg>
+<status status="PASS" start="2025-05-22T18:01:57.816671" elapsed="0.053610"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:01:59.874009" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:01:57.872066" elapsed="2.002458"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:02:04.888584" level="INFO">Reading from serial...
+Response received: Moist ADC = 0 | Tank level ADC = 1810 | Tank is FULL
+Manual override: PUMP LOCKED OFF</msg>
+<msg time="2025-05-22T18:02:04.888945" level="INFO">${response} = Moist ADC = 0 | Tank level ADC = 1810 | Tank is FULL
+Manual override: PUMP LOCKED OFF</msg>
+<var>${response}</var>
+<arg>timeout=5</arg>
+<status status="PASS" start="2025-05-22T18:01:59.875578" elapsed="5.013441"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T18:02:04.890293" level="INFO">Actual Response: Moist ADC = 0 | Tank level ADC = 1810 | Tank is FULL
+Manual override: PUMP LOCKED OFF</msg>
+<arg>Actual Response: ${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T18:02:04.889661" elapsed="0.000859"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response}</arg>
+<arg>Manual override: PUMP LOCKED OFF</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-22T18:02:04.891105" elapsed="0.000621"/>
+</kw>
+<kw name="Close Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:02:04.894958" level="INFO">Closing serial connection.</msg>
+<status status="PASS" start="2025-05-22T18:02:04.892327" elapsed="0.002830"/>
+</kw>
+<status status="PASS" start="2025-05-22T18:01:50.806084" elapsed="14.089521"/>
+</test>
+<test id="s1-t5" name="Responds to Auto Mode" line="45">
+<kw name="Open Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:02:06.902122" level="INFO">Serial connection opened on /dev/ttyUSB0 with baud 115200</msg>
+<arg>${PORT}</arg>
+<arg>baudrate=${BAUDRATE}</arg>
+<status status="PASS" start="2025-05-22T18:02:04.897115" elapsed="2.005283"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:02:11.903928" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:02:06.903153" elapsed="5.001197"/>
+</kw>
+<kw name="Write To Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:02:11.987994" level="INFO">Writing raw bytes: 'active\r\n'</msg>
+<arg>active\r\n</arg>
+<status status="PASS" start="2025-05-22T18:02:11.905123" elapsed="0.083276"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:02:13.990481" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:02:11.989370" elapsed="2.001676"/>
+</kw>
+<kw name="Read From Serial" owner="SerialKeywords">
+<msg time="2025-05-22T18:02:19.035944" level="INFO">Reading from serial...
+Response received: Resuming automated action
+AUTO PUMP ON
+Moist ADC = 0 | Tank level ADC = 1810 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1730 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1772 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1770 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1780 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1774 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1772 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1774 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL</msg>
+<msg time="2025-05-22T18:02:19.036621" level="INFO">${response} = Resuming automated action
+AUTO PUMP ON
+Moist ADC = 0 | Tank level ADC = 1810 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+...</msg>
+<var>${response}</var>
+<arg>timeout=5</arg>
+<status status="PASS" start="2025-05-22T18:02:13.991997" elapsed="5.044795"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-22T18:02:19.039850" level="INFO">Actual Response: Resuming automated action
+AUTO PUMP ON
+Moist ADC = 0 | Tank level ADC = 1810 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1798 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1730 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1772 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1770 | Tank is FULL
+AUTO PUMP OFF
+Moist ADC = 0 | Tank level ADC = 1780 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1774 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1772 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1774 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1790 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL
+Moist ADC = 0 | Tank level ADC = 1792 | Tank is FULL</msg>
+<arg>Actual Response: ${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-22T18:02:19.038797" elapsed="0.001826"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response}</arg>
+<arg>Resuming automated action</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-22T18:02:19.041831" elapsed="0.001068"/>
+</kw>
+<kw name="Close Serial Connection" owner="SerialKeywords">
+<msg time="2025-05-22T18:02:19.047223" level="INFO">Closing serial connection.</msg>
+<status status="PASS" start="2025-05-22T18:02:19.043770" elapsed="0.003761"/>
+</kw>
+<status status="PASS" start="2025-05-22T18:02:04.896173" elapsed="14.152261"/>
+</test>
+<test id="s1-t6" name="Pump On From Pin" line="55">
+<kw name="Start Process" owner="Process">
+<msg time="2025-05-22T18:02:19.052973" level="INFO">Starting process:
+sudo python3 ../scripts/pintest.py</msg>
+<arg>sudo</arg>
+<arg>python3</arg>
+<arg>../scripts/pintest.py</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2025-05-22T18:02:19.051916" elapsed="0.018034"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-22T18:02:24.074767" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-22T18:02:19.072630" elapsed="5.002416"/>
+</kw>
+<kw name="Terminate All Processes" owner="Process">
+<msg time="2025-05-22T18:02:24.076040" level="INFO">Gracefully terminating process.</msg>
+<msg time="2025-05-22T18:02:24.176642" level="INFO">Process completed.</msg>
+<doc>Terminates all still running processes started by this library.</doc>
+<status status="PASS" start="2025-05-22T18:02:24.075590" elapsed="0.101403"/>
+</kw>
+<status status="PASS" start="2025-05-22T18:02:19.049965" elapsed="5.127647"/>
+</test>
+<status status="PASS" start="2025-05-22T18:01:20.292078" elapsed="63.886976"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Combined Test" id="s1" pass="6" fail="0" skip="0">Combined Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
