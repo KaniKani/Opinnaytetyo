@@ -16,7 +16,7 @@ Boot Message
     Sleep   5s
 
 Send Manual Test Message
-    Write To Serial     WTF\n
+    Write To Serial     h\n
     Sleep   1s
     ${debug}=    Read From Serial    timeout=3
     Log    DEBUG RESPONSE: ${debug}
