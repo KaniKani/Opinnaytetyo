@@ -9,5 +9,7 @@ After installing python, install pip via the command "sudo apt install python3-p
 
 Now with the required python packages installed in the system, we will create a python virtual environment with the command "python3 -m venv <venv>" where <venv> is the name of the virtual environment. Make sure you are inside the Opinnaytetyo directory before executing the command.
 
-Now with pip installed, we can install the pip packages within requirements.txt with the command "pip install -r requirements.txt"
+After the virtual environment is created, we can enter with the command "source <venv>/bin/activate" where <venv> is the name of the virtual environment. To leave the environment, use the command "deactivate".
+
+Now with pip installed and we are inside the virtual environment. We can install the pip packages within requirements.txt with the command "pip install -r requirements.txt"
 
