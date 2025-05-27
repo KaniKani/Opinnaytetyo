@@ -7,4 +7,7 @@ You will need some packages for anything to work so install Python3 via the comm
 
 After installing python, install pip via the command "sudo apt install python3-pip"
 
+Now with the required python packages installed in the system, we will create a python virtual environment with the command "python3 -m venv <venv>" where <venv> is the name of the virtual environment. Make sure you are inside the Opinnaytetyo directory before executing the command.
+
 Now with pip installed, we can install the pip packages within requirements.txt with the command "pip install -r requirements.txt"
+
