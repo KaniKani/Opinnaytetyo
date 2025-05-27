@@ -13,3 +13,8 @@ After the virtual environment is created, we can enter with the command "source 
 
 Now with pip installed and we are inside the virtual environment. We can install the pip packages within requirements.txt with the command "pip install -r requirements.txt"
 
+To Flash the ESP32, use Arduino IDE with the correct settings for your board or use VS Code if you have it set up for flashing microcontrollers. Use the isotest.ino file from the serial_tests directory for Serial testing.
+
+After flashing the ESP32, change the correct port where it is connected to in the serialtest.robot file. After changing the port, you can navigate to Opinnaytetyo/serial_test/tests and start the test via the command "robot serialtest.robot".
+
+Happy testing :)
